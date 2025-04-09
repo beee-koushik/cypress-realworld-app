@@ -170,6 +170,16 @@ const NavBar: React.FC<NavBarProps> = ({ drawerOpen, toggleDrawer, notifications
         >
           <AttachMoneyIcon /> New
         </Button>
+        <Button
+          className={classes.newTransactionButton}
+          variant="contained"
+          color="inherit"
+          component={RouterLink}
+          to="/transaction/notnew"
+          data-test="nav-top-new-transaction"
+        >
+          <AttachMoneyIcon />  Not New
+        </Button>
         <IconButton
           color="inherit"
           component={RouterLink}
@@ -186,7 +196,7 @@ const NavBar: React.FC<NavBarProps> = ({ drawerOpen, toggleDrawer, notifications
           </Badge>
         </IconButton>
       </Toolbar>
-      {(match.pathname === "/" || RegExp("/(?:public|contacts|personal)").test(match.pathname)) && (
+      {(match.pathname === "/" && RegExp("/(?:public|contacts|personal)").test(match.pathname)) && (
         <TransactionNavTabs />
       )}
     </StyledAppBar>
