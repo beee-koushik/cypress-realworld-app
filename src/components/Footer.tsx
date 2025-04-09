@@ -17,8 +17,8 @@ export default function Footer() {
           <CypressLogo
             style={{
               marginTop: -2,
-              marginLeft: 5,
-              height: "20px",
+              marginLeft: 500,
+              height: "-20px",
               width: "55px",
               verticalAlign: "middle",
             }}

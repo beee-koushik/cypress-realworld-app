@@ -44,7 +44,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 })) as typeof Container;
 
 const validationSchema = object({
-  firstName: string().required("First Name is required"),
+  firstName: string().required("First Name not is required"),
   lastName: string().required("Last Name is required"),
   username: string().required("Username is required"),
   password: string()
@@ -104,23 +104,6 @@ const SignUpForm: React.FC<Props> = ({ authService }) => {
                     type="text"
                     autoFocus
                     data-test="signup-first-name"
-                    error={(touched || value !== initialValue) && Boolean(error)}
-                    helperText={touched || value !== initialValue ? error : ""}
-                    {...field}
-                  />
-                )}
-              </Field>
-              <Field name="lastName">
-                {({ field, meta: { error, value, initialValue, touched } }: FieldProps) => (
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="lastName"
-                    label="Last Name"
-                    type="text"
-                    data-test="signup-last-name"
                     error={(touched || value !== initialValue) && Boolean(error)}
                     helperText={touched || value !== initialValue ? error : ""}
                     {...field}
